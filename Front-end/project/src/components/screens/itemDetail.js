@@ -10,7 +10,7 @@ export default class ItemDetail extends Component {
         return (
           <View style={styles.container}>
             <View style={styles.imageSlider}>
-                <Carousel images ={ config.images } />
+                <Carousel images ={ config.images } isItemCarousel ={ true } />
             </View>
             <View style={styles.buttonLayer}>
                 <TouchableOpacity

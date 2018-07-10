@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, View, TouchableOpacity, Dimensions, ScrollView } from 'react-native'
 import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component'; 
+import { Carousel } from '.';
+import config from '../../config';
 
 const { width, height } = Dimensions.get('window');
 
@@ -42,6 +44,9 @@ class DetailBoard extends Component {
                         <Rows data={this.state.tableData} flexArr={[1]} style={styles.row} textStyle={styles.text}/>
                      </TableWrapper>
                 </Table>
+                <View style={styles.relativeProductCarousel}>
+                    <Carousel images={ config.images} isItemCarousel={false}/>
+                </View>
             </ScrollView>
         );
     }
@@ -79,6 +84,15 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: "200",
         color:  "#8D8E8C"
+    },
+
+    relativeProductCarousel: {
+        marginTop: 100,
+        backgroundColor: 'rgb(123,213,101)',
+        width,
+        height: 140,
+        flex: 1,
+        flexDirection: 'column',
     }
   });
 
